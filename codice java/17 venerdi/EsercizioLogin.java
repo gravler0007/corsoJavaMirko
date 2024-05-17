@@ -147,7 +147,7 @@ public class EsercizioLogin {
 
         clearDisplay();
         
-        //LAMBDA FUNCTION
+        //lambda function
         users.forEach((username, password) -> {
             System.out.println("chiave: " + username + " -> " + "password: " + password + "\n");
         });
