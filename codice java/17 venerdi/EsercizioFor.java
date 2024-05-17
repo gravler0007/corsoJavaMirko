@@ -14,7 +14,7 @@ public class EsercizioFor {
 
             System.out.print("\nFornisci il tasso di interesse: ");
             tasso = scannerN.nextFloat();
-
+            System.out.println();
 
             for (int i = 1; i <= mesi; i++) {
                 System.out.print("Inserisci lo stipendio del mese numero " + i + ": ");
@@ -27,8 +27,8 @@ public class EsercizioFor {
 
             media = StipendioTotale / mesi;
 
-            System.out.println("\nIn " + mesi + " mesi hai guadagnato complessivamente " + StipendioTotale + "euro");
-            System.out.println("\nIn media hai guadagnato " + media + "euro al mese");
+            System.out.println("\nIn " + mesi + " mesi hai guadagnato complessivamente " + StipendioTotale + "\u20ac");
+            System.out.println("\nIn media hai guadagnato " + media + "\u20ac al mese");
             System.out.println("\nApplicando una tassa del " + tasso + "%, il tuo stipendio complessivo è: "
                     + StipendioTotaleConTasse);
             
