@@ -32,7 +32,9 @@ public class EsercizioLogin {
                     break;
 
                 case 4:
-                    System.out.print("SEE YA");
+                    System.out.println("\n*******");
+                    System.out.println("SEE YA");
+                    System.out.println("*******\n");
                     break;
 
                 default:
@@ -69,6 +71,10 @@ public class EsercizioLogin {
         System.out.print("Enter your password: ");
         password = scannerString.nextLine();
 
+        // levo gli spazi bianchi all'inizio e alla fine della stringa
+        username = username.trim();
+        password = password.trim();
+
         if (users.containsKey(username)) {
             System.out.print("\nUser already exists.");
         } else {
@@ -91,6 +97,10 @@ public class EsercizioLogin {
         usernameLogin = scannerString.nextLine();
         System.out.print("Enter your password: ");
         passwordLogin = scannerString.nextLine();
+
+        //levo gli spazi bianchi all'inizio e alla fine della stringa
+        usernameLogin = usernameLogin.trim();
+        passwordLogin = passwordLogin.trim();
 
         //controllo se l'utente già esiste attraverso "containsKey"
         if (!users.containsKey(usernameLogin)) {
@@ -122,31 +132,36 @@ public class EsercizioLogin {
     
     }
 
-    static void clearDisplay() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
-    
-    static void waitInput(Scanner scanner) {
-        System.out.print("\n\nPress Any Key To Continue...");
-        scanner.nextLine();
-    }
-
     static void mathFunction(Scanner scannerNumber) {
-        System.out.print("\nInserisci un numero per calcolare la sua radice: ");
-        float number = scannerNumber.nextFloat();
-        System.out.println("La radice di " + number + " è " + Math.sqrt(number));
-        scannerNumber.nextLine(); // Consume newline
 
-        waitInput(scannerNumber);
-        clearDisplay();
+        while (true) {
+            float number = 0;
+            int choice = 0;
+            System.out.print("Inserisci un numero per calcolare la sua radice: ");
+            number = scannerNumber.nextFloat();
+            System.out.println("\nLa radice di " + number + " è " + Math.sqrt(number));
+            scannerNumber.nextLine(); // Consume newline
+
+            System.out.print("\nVuoi fare un altro giro? (0 = no, altri numeri = si): ");
+            choice = scannerNumber.nextInt();
+
+            if(choice == 0){
+                break;
+            }else {
+                System.out.print("┬─┬ノ(ಠ_ಠノ)\n");
+                System.out.print("(┛ಠДಠ)┛彡┻━┻\n");
+                // waitInput(scannerNumber);
+                // clearDisplay();
+            }
+                
+        }
 
     }
 
     static void printUsers(Scanner scanner) {
 
         clearDisplay();
-        
+
         //lambda function
         users.forEach((username, password) -> {
             System.out.println("chiave: " + username + " -> " + "password: " + password + "\n");
@@ -156,4 +171,16 @@ public class EsercizioLogin {
         clearDisplay();
     }
 
+    static void clearDisplay() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
+    static void waitInput(Scanner scanner) {
+        System.out.print("\n\nPress Any Key To Continue...");
+        scanner.nextLine();
+    }
+
 }
+
+
