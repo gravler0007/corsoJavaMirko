@@ -12,7 +12,6 @@ public class Calcolatrice {
         int[] numberOfOperation = { 0, 0, 0, 0 };
 
         int choice = 10;
-        float num1 = 0, num2 = 0;
         float[] number = {0, 0};
 
         while (choice != 0) {
@@ -21,12 +20,10 @@ public class Calcolatrice {
             switch (choice) {
 
                 case 1:
-                    System.out.print("\nGive me the first number: ");
-                    num1 = scannerNumber.nextFloat();
-                    System.out.print("Give me the second number: ");
-                    num2 = scannerNumber.nextFloat();
+                    askNumbers(scannerNumber, number);
 
-                    System.out.println("\nthe sum between " + num1 + " and " + num2 + " is " + addition(num1, num2));
+                    System.out.println("\nthe sum between " + number[0] + " and " + number[1] + " is " + addition(
+                            number[0], number[1]));
                     numberOfOperation[0]++;
 
                     waitInput(scannerString);
@@ -36,12 +33,10 @@ public class Calcolatrice {
                     break;
 
                 case 2:
-                    System.out.print("\nGive me the first number: ");
-                    num1 = scannerNumber.nextFloat();
-                    System.out.print("Give me the second number: ");
-                    num2 = scannerNumber.nextFloat();
+                    askNumbers(scannerNumber, number);
 
-                    System.out.println("\nthe subtraction between " + num1 + " and " + num2 + " is " + subtraction(num1, num2));
+                    System.out.println("\nthe subtraction between " + number[0] + " and " + number[1] + " is " + subtraction(
+                            number[0], number[1]));
                     numberOfOperation[1]++;
 
                     waitInput(scannerString);
@@ -51,12 +46,10 @@ public class Calcolatrice {
 
                 case 3:
 
-                    System.out.print("\nGive me the first number: ");
-                    num1 = scannerNumber.nextFloat();
-                    System.out.print("Give me the second number: ");
-                    num2 = scannerNumber.nextFloat();
+                    askNumbers(scannerNumber, number);
 
-                    System.out.println("\nthe max between " + num1 + " and " + num2 + " is " + max(num1, num2));
+                    System.out.println("\nthe max between " + number[0] + " and " + number[1] + " is " + max(
+                            number[0], number[1]));
                     numberOfOperation[2]++;
 
                     waitInput(scannerString);
@@ -66,12 +59,10 @@ public class Calcolatrice {
 
                 case 4:
 
-                    System.out.print("\nGive me the first number: ");
-                    num1 = scannerNumber.nextFloat();
-                    System.out.print("Give me the second number: ");
-                    num2 = scannerNumber.nextFloat();
+                    askNumbers(scannerNumber, number);
 
-                    System.out.println("\nthe min between " + num1 + " and " + num2 + " is " + min(num1, num2));
+                    System.out.println("\nthe min between " + number[0] + " and " + number[1] + " is " + min(
+                            number[0], number[1]));
                     numberOfOperation[3]++;
 
                     waitInput(scannerString);
@@ -142,11 +133,11 @@ public class Calcolatrice {
 
     static void askNumbers(Scanner scannerNumber, float[] number) {
 
- 
         System.out.print("\nGive me the first number: ");
         number[0] = scannerNumber.nextFloat();
-        // System.out.print("Give me the second number: ");
-        // num2 = scannerNumber.nextFloat();
+        System.out.print("Give me the second number: ");
+        number[1] = scannerNumber.nextFloat();
+
     }
 
 }
