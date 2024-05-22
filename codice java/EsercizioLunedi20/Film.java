@@ -1,4 +1,3 @@
-package EsercizioLunedi18;
 import java.util.ArrayList;
 
 public class Film {
