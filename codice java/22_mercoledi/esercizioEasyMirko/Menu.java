@@ -2,13 +2,15 @@ import java.util.Scanner;
 
 public class Menu {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         boolean continua = true;
 
-        while (continua) {
+         while (continua) {
+        //  mi creo il mio piatto, questo avrà due liste: ingredientiPrivati,ingredientiPubblici
             PiattoSpecialeEasyMirko piatto = new PiattoSpecialeEasyMirko();
 
-            System.out.println("Benvenuti nel nostro ristorante!");
+            System.out.println("Benvenuti nel nostro ristorante!\n");
 
             PiattoSpecialeEasyMirko.stampaIngredientiDisponibili();
 

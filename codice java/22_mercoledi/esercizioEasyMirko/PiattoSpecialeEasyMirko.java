@@ -36,6 +36,7 @@ public class PiattoSpecialeEasyMirko {
     }
 
     public PiattoSpecialeEasyMirko() {
+        //per ogni oggetto che creo, questo oggetto avrà due liste, ingredienti pubblici e privati
         this.ingredientiPrivati = new ArrayList<>();
         this.ingredientiPubblici = new ArrayList<>();
     }
