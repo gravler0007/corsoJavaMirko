@@ -6,11 +6,11 @@ public class Menu {
         boolean continua = true;
 
         while (continua) {
-            PiattoSpecialeMio piatto = new PiattoSpecialeMio();
+            PiattoSpecialeEasyMirko piatto = new PiattoSpecialeEasyMirko();
 
             System.out.println("Benvenuti nel nostro ristorante!");
 
-            PiattoSpecialeMio.stampaIngredientiDisponibili();
+            PiattoSpecialeEasyMirko.stampaIngredientiDisponibili();
 
             System.out.println("Seleziona ingredienti pubblici dal menu (inserisci 'fine' per terminare):");
             while (true) {
