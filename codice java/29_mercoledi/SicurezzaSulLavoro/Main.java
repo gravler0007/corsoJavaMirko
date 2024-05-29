@@ -67,20 +67,21 @@ public class Main {
         // managment.addDevice(fireAlarm);
         // managment.addDevice(ventilationSystem);
 
-        System.out.println();
+        System.out.println("\n");
 
         checkAllDeviceStatus();
         // managment.checkAllDeviceStatus();
 
-        System.out.println();
+        System.out.println("\n");
 
         extinguisher.startDevice();
         fireAlarm.startDevice();
 
-        System.out.println();
+        System.out.println("\n");
 
         checkAllDeviceStatus();
         // managment.checkAllDeviceStatus();
+        System.out.println("\n");
         
         
     }
