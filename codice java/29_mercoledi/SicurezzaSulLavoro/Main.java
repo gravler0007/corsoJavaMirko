@@ -36,13 +36,13 @@ import java.util.List;
 
 public class Main {
 
-    List<DispositivoDiSicurezza> devices = new ArrayList<>();
+    static List<DispositivoDiSicurezza>  devices = new ArrayList<>();
 
-    public void addDevice(DispositivoDiSicurezza device) {
+    public static void addDevice(DispositivoDiSicurezza device) {
         devices.add(device);
     }
 
-    public void checkAllDeviceStatus() {
+    public static void checkAllDeviceStatus() {
         for (DispositivoDiSicurezza device : devices) {
             device.checkDevice();
         }
@@ -50,21 +50,27 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Main managment = new Main();
+        // Main managment = new Main();
 
         Estintore extinguisher = new Estintore();
         AllarmeAntincendio fireAlarm = new AllarmeAntincendio();
         SistemaDiVentilazioneEmergenza ventilationSystem = new SistemaDiVentilazioneEmergenza();
         KitDiProntoSoccorso firstAidKit = new KitDiProntoSoccorso();
 
-        managment.addDevice(firstAidKit);
-        managment.addDevice(extinguisher);
-        managment.addDevice(fireAlarm);
-        managment.addDevice(ventilationSystem);
+        addDevice(firstAidKit);
+        addDevice(extinguisher);
+        addDevice(fireAlarm);
+        addDevice(ventilationSystem);
+
+        // managment.addDevice(firstAidKit);
+        // managment.addDevice(extinguisher);
+        // managment.addDevice(fireAlarm);
+        // managment.addDevice(ventilationSystem);
 
         System.out.println();
 
-        managment.checkAllDeviceStatus();
+        checkAllDeviceStatus();
+        // managment.checkAllDeviceStatus();
 
         System.out.println();
 
@@ -73,7 +79,8 @@ public class Main {
 
         System.out.println();
 
-        managment.checkAllDeviceStatus();
+        checkAllDeviceStatus();
+        // managment.checkAllDeviceStatus();
         
         
     }
