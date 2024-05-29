@@ -2,7 +2,9 @@ public class Tecnico extends Dipendente{
     
     // costruttore
     public Tecnico(double stipendio, String nome) {
-        super(stipendio, nome);
+        // super(stipendio, nome);
+        this.stipendio = stipendio;
+        this.nome = nome;
     }
 
     @Override

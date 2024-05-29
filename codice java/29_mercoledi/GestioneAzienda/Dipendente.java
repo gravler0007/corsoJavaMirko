@@ -1,14 +1,14 @@
 abstract public class Dipendente implements BonusCalcolabile {
     
     //le definisco qui per farle ereditare tramite il costruttore e non dovere sempre definirle in ogni file
-    protected double stipendio;
-    protected String nome;
+    double stipendio;
+    String nome;
 
     //costruttore
-    public Dipendente(double stipendio, String nome) {
-        this.stipendio = stipendio;
-        this.nome = nome;
-    }
+    // public Dipendente(double stipendio, String nome) {
+    //     this.stipendio = stipendio;
+    //     this.nome = nome;
+    // }
     
     //setter
     public String getNome() {
