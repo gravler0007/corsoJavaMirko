@@ -25,7 +25,58 @@
 //     Gli oggetti di ogni tipo di dispositivo devono essere gestiti in una lista che permetta di iterare attraverso di essi per eseguire controlli periodici.
 
 // Obiettivo:
-// Il tuo obiettivo è descrivere come utilizzeresti le interfacce per progettare questo sistema. Dovrai spiegare:
-// Come definiresti l'interfaccia DispositivoDiSicurezza e quali metodi dichiareresti.
-// Come implementeresti le classi concrete per i diversi tipi di dispositivi di sicurezza.
-// Come gestiresti una collezione di dispositivi di sicurezza e quali operazioni eseguiresti su di essa per assicurarti che tutti i dispositivi siano funzionanti.
+    // Il tuo obiettivo è descrivere come utilizzeresti le interfacce per progettare questo sistema. Dovrai spiegare:
+    // Come definiresti l'interfaccia DispositivoDiSicurezza e quali metodi dichiareresti.
+    // Come implementeresti le classi concrete per i diversi tipi di dispositivi di sicurezza.
+    // Come gestiresti una collezione di dispositivi di sicurezza e quali operazioni eseguiresti su di essa per assicurarti che tutti i dispositivi siano funzionanti.
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class Main {
+
+    List<DispositivoDiSicurezza> devices = new ArrayList<>();
+
+    public void addDevice(DispositivoDiSicurezza device) {
+        devices.add(device);
+    }
+
+    public void checkAllDeviceStatus() {
+        for (DispositivoDiSicurezza device : devices) {
+            device.checkDevice();
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Main managment = new Main();
+
+        Estintore extinguisher = new Estintore();
+        AllarmeAntincendio fireAlarm = new AllarmeAntincendio();
+        SistemaDiVentilazioneEmergenza ventilationSystem = new SistemaDiVentilazioneEmergenza();
+        KitDiProntoSoccorso firstAidKit = new KitDiProntoSoccorso();
+
+        managment.addDevice(firstAidKit);
+        managment.addDevice(extinguisher);
+        managment.addDevice(fireAlarm);
+        managment.addDevice(ventilationSystem);
+
+        System.out.println();
+
+        managment.checkAllDeviceStatus();
+
+        System.out.println();
+
+        extinguisher.startDevice();
+        fireAlarm.startDevice();
+
+        System.out.println();
+
+        managment.checkAllDeviceStatus();
+        
+        
+    }
+
+    
+}
