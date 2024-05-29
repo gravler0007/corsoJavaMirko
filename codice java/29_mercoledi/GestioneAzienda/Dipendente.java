@@ -10,14 +10,14 @@ abstract public class Dipendente implements BonusCalcolabile {
     //     this.nome = nome;
     // }
     
-    //setter
-    public String getNome() {
-        return nome;
-    }
+    // //setter
+    // public String getNome() {
+    //     return nome;
+    // }
 
-    public double getStipendio() {
-        return stipendio;
-    }
+    // public double getStipendio() {
+    //     return stipendio;
+    // }
 
 
     //metodo astratto per calcolare il bonus (va implementato nelle classi specifiche)

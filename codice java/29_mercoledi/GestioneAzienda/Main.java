@@ -29,9 +29,9 @@ public class Main {
 
     static double stipendioAmministrativo = 3000, stipendioTecnico = 4250, stipendioManager = 4500;
     public static void main(String[] args) {
-        Dipendente amministrativo = new Amministrativo(stipendioAmministrativo, "Mirko Brutto");
-        Dipendente tecnico = new Tecnico(stipendioTecnico, "Spring sarà la morte");
-        Dipendente manager = new Manager(stipendioManager, "Flavio si");
+        Amministrativo amministrativo = new Amministrativo(stipendioAmministrativo, "Mirko Brutto");
+        Tecnico tecnico = new Tecnico(stipendioTecnico, "Spring sarà la morte");
+        Manager manager = new Manager(stipendioManager, "Flavio si");
 
         System.out.println("Il dipendente 'amministrativo' \"" + amministrativo.getNome() + "\" ha un bonus del 10% pari a " + amministrativo.calcolaBonus() + " euro in più, per un totale complessivo dello stipendio pari a " + (stipendioAmministrativo + amministrativo.calcolaBonus()) + " euro");
         System.out.println("Il dipendente 'tecnico' \"" + tecnico.getNome() + "\" ha un bonus del 15% pari a " + tecnico.calcolaBonus() + " euro in più, per un totale complessivo dello stipendio pari a " + (stipendioTecnico + tecnico.calcolaBonus()) + " euro");

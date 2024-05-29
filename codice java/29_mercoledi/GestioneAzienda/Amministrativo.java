@@ -3,9 +3,18 @@ public class Amministrativo extends Dipendente {
 
     //costruttore
     public Amministrativo(double stipendio, String nome) {
-    //  super(stipendio, nome);
+        //  super(stipendio, nome);
         this.stipendio = stipendio;
         this.nome = nome;
+    }
+    
+    // setter
+    public String getNome() {
+        return nome;
+    }
+
+    public double getStipendio() {
+        return stipendio;
     }
 
     
