@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Users>
+    <person id="2">
+        <name>Panna</name>
+        <age>1200</age>
+        <info>Person [name=Panna, age=1200]</info>
+    </person>
+</Users>
