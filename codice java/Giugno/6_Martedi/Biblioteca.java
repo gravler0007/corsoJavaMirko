@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Biblioteca {
+public class Biblioteca implements GestioneLibri, VisualizzazioneLibri{
 
     private ArrayList<Libro> libri;
 
@@ -9,6 +9,7 @@ public class Biblioteca {
         this.libri = new ArrayList<>();
     }
 
+    @Override
     public void prestaLibro(String titolo) {
         for (Libro libro : libri) {
             // se il titolo del libro che sto scansionando è uguale al titolo che sto
@@ -22,6 +23,7 @@ public class Biblioteca {
         System.out.println("\nIl libro " + titolo + " non è presente nella biblioteca. Siete pregati di aggiungerlo");
     }
 
+    @Override
     public void restituisciLibro(String titolo) {
         for (Libro libro : libri) {
             // se il titolo del libro che sto scansionando è uguale al titolo che sto
@@ -36,12 +38,14 @@ public class Biblioteca {
     }
 
     // aggiungi libro
+    @Override
     public void aggiungiLibro(String titolo, int copie) {
         // Aggiungo alla lista il nuvo libro ed il numero di copie;
         libri.add(new Libro(titolo, copie));
     }
 
     // stampa libri
+    @Override
     public void stampaLibri() {
         System.out.println("\n\nLibri presenti in biblioteca: ");
         for (Libro libro : libri) {
@@ -50,6 +54,7 @@ public class Biblioteca {
     }
 
     // funzione per eliminare un libro
+    @Override
     public void eliminaLibro(String titolo) {
         for (int i = 0; i < libri.size(); i++) {
             Libro libro = libri.get(i);
