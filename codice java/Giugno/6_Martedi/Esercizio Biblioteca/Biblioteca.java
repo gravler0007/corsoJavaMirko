@@ -14,7 +14,7 @@ public class Biblioteca implements GestioneLibri, VisualizzazioneLibri{
         for (Libro libro : this.libri) {
             // se il titolo del libro che sto scansionando è uguale al titolo che sto
             // passando come parametro
-            if (libro.getTitolo().equals(titolo)) {
+            if (libro.getTitolo().equalsIgnoreCase(titolo)) {
                 // presto il libro ed esco
                 libro.presta();
                 return;
@@ -28,7 +28,7 @@ public class Biblioteca implements GestioneLibri, VisualizzazioneLibri{
         for (Libro libro : this.libri) {
             // se il titolo del libro che sto scansionando è uguale al titolo che sto
             // passando come parametro
-            if (libro.getTitolo().equals(titolo)) {
+            if (libro.getTitolo().equalsIgnoreCase(titolo)) {
                 // presto il libro ed esco
                 libro.restituisci();
                 return;
@@ -58,7 +58,7 @@ public class Biblioteca implements GestioneLibri, VisualizzazioneLibri{
     public void eliminaLibro(String titolo) {
         for (int i = 0; i < libri.size(); i++) {
             Libro libro = libri.get(i);
-            if (libro.getTitolo().equals(titolo)) {
+            if (libro.getTitolo().equalsIgnoreCase(titolo)) {
                 System.out.println("\nIl libro '" + libro.getTitolo() + "' è stato eliminato dalla libreria ");
                 libri.remove(i);
                 return;

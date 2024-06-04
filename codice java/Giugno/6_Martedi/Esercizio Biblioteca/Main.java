@@ -10,6 +10,12 @@ public class Main {
         int scelta, numeroCopie;
         String titolo, restituisci, elimina;
 
+        biblioteca.aggiungiLibro("Biancaneve e i sette cani", 1);
+        biblioteca.aggiungiLibro("20.000 seghe sotto i mari", 1);
+        biblioteca.aggiungiLibro("Il signore degli agnelli", 1);
+        biblioteca.aggiungiLibro("Tetanic", 1);
+        biblioteca.aggiungiLibro("The gay after tomorrow", 1);
+
         while (cicla) {
             menu();
 
