@@ -10,9 +10,3 @@ import java.lang.annotation.Target;
 public @interface DeprecatedCustom {
     String message() default "Deprecato";
 }
-
-
-
-
-
-

@@ -17,7 +17,9 @@ import java.io.IOException;
 
 public class Main {
     static int counter = 0;
+
     public static void main(String[] args) {
+        
         Person person1 = new Person("Mirko", 72);
         Person person2 = new Person("Panna", 1200);
 
@@ -27,7 +29,7 @@ public class Main {
         }
 
         inXml(person1, "fileXml");
-        inXml(person2, "fileXml2");
+        inXml(person2, "fileXml");
 
         // Method[] metodi = Person.class.getDeclaredMethods();
         // for (Method metodo : metodi) {
