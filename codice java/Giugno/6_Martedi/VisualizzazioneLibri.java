@@ -1,3 +1,3 @@
-interface VisualizzazioneLibri {
+public interface VisualizzazioneLibri {
     void stampaLibri();
 }

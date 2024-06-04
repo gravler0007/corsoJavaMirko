@@ -1,4 +1,4 @@
-interface GestioneLibri {
+public interface GestioneLibri {
     void prestaLibro(String titolo);
 
     void restituisciLibro(String titolo);

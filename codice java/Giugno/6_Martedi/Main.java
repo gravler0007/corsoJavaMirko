@@ -1,29 +1,96 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
         Biblioteca biblioteca = new Biblioteca();
+        Scanner scannerN = new Scanner(System.in);
+        Scanner scannerS = new Scanner(System.in);
+        boolean cicla = true;
+        int scelta, numeroCopie;
+        String titolo, restituisci, elimina;
 
-        biblioteca.aggiungiLibro("Il signore dei fornelli", 15);
-        biblioteca.aggiungiLibro("20.000 seghe sotto i mari", 25);
-        biblioteca.aggiungiLibro("Mirko vs. pannacotta, i due fregni", 2);
+        while (cicla) {
+            menu();
 
-        biblioteca.stampaLibri();
+            scelta = scannerN.nextInt();
 
-        biblioteca.prestaLibro("Mirko vs. pannacotta, i due fregni");
-        biblioteca.prestaLibro("Mirko vs. pannacotta, i due fregni");
-        biblioteca.prestaLibro("Mirko vs. pannacotta, i due fregni"); //errore?
+            switch (scelta) {
+                case 1:
+                    System.out.print("Inserisci il titolo del libro: ");
+                    titolo = scannerS.nextLine();
+                    System.out.print("Inserisci il numero di copie: ");
+                    numeroCopie = scannerN.nextInt();
+                    biblioteca.aggiungiLibro(titolo, numeroCopie);
+                    waitInput(scannerS);
+                    clearDisplay();
+                    break;
 
-        biblioteca.stampaLibri();
+                case 2:
+                    System.out.print("Inserisci il titolo del libro da prendere in prestito: ");
+                    titolo = scannerS.nextLine();
+                    biblioteca.prestaLibro(titolo);
+                    waitInput(scannerS);
+                    clearDisplay();
+                    break;
 
-        biblioteca.restituisciLibro("Mirko vs. pannacotta, i due fregni");
-        biblioteca.restituisciLibro("Mirko vs. pannacotta, i due fregni");
-        biblioteca.restituisciLibro("Mirko vs. pannacotta, i due fregni"); //errore?
+                case 3:
+                    System.out.print("Inserisci il titolo del libro da restituire: ");
+                    restituisci = scannerS.nextLine();
+                    biblioteca.restituisciLibro(restituisci);
+                    waitInput(scannerS);
+                    clearDisplay();
+                    break;
 
-        biblioteca.stampaLibri();
+                case 4:
+                    System.out.print("Inserisci il titolo del libro da eliminare: ");
+                    elimina = scannerS.nextLine();
+                    biblioteca.eliminaLibro(elimina);
+                    waitInput(scannerS);
+                    clearDisplay();
+                    break;
 
-        biblioteca.eliminaLibro("Il signore dei fornelli");
+                case 5:
+                    biblioteca.stampaLibri();
+                    waitInput(scannerS);
+                    clearDisplay();
+                    break;
+                
+                case 0:
+                    cicla = false;
+                    System.out.println("Addio!");
+                    break;
 
-        biblioteca.stampaLibri();
+                default:
+                    System.out.println("Scelta non valida.");
+                    break;
+            }
+        }
+        
+        scannerN.close();
+        scannerS.close();
+
+    }
+
+    public static void menu() {
+        System.out.println("\nScegli un'opzione:\n");
+        System.out.println("1. Aggiungi un libro");
+        System.out.println("2. Presta un libro");
+        System.out.println("3. Restituisci un libro");
+        System.out.println("4. Elimina un libro");
+        System.out.println("5. Stampa libri");
+        System.out.println("0. Esci\n");
+        System.out.print("Inserisci la tua scelta: ");
+    }
+
+    static void clearDisplay() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
+    static void waitInput(Scanner scanner) {
+        System.out.print("\n\nPress Any Key To Continue...");
+        scanner.nextLine();
     }
 
 }
