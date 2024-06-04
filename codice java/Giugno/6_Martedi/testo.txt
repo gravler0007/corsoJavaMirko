@@ -5,6 +5,7 @@ Dobbiamo creare una classe chiamata "Biblioteca" che contenga le seguenti propri
 Un elenco di libri disponibili nella biblioteca (consigliato l'uso di un array o di una collezione di oggetti "Libro").
 Il numero di copie disponibili per ogni libro.
 Il numero di copie attualmente in prestito.
+
 La classe Biblioteca dovrebbe avere i seguenti metodi:
 
 "prestaLibro": questo metodo deve prenotare una copia del libro specificato dall'utente, riducendo il numero di copie 
