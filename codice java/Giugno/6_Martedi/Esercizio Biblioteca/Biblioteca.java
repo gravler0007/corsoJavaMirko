@@ -11,7 +11,7 @@ public class Biblioteca implements GestioneLibri, VisualizzazioneLibri{
 
     @Override
     public void prestaLibro(String titolo) {
-        for (Libro libro : libri) {
+        for (Libro libro : this.libri) {
             // se il titolo del libro che sto scansionando è uguale al titolo che sto
             // passando come parametro
             if (libro.getTitolo().equals(titolo)) {
@@ -25,7 +25,7 @@ public class Biblioteca implements GestioneLibri, VisualizzazioneLibri{
 
     @Override
     public void restituisciLibro(String titolo) {
-        for (Libro libro : libri) {
+        for (Libro libro : this.libri) {
             // se il titolo del libro che sto scansionando è uguale al titolo che sto
             // passando come parametro
             if (libro.getTitolo().equals(titolo)) {
@@ -48,7 +48,7 @@ public class Biblioteca implements GestioneLibri, VisualizzazioneLibri{
     @Override
     public void stampaLibri() {
         System.out.println("\n\nLibri presenti in biblioteca: ");
-        for (Libro libro : libri) {
+        for (Libro libro : this.libri) {
             System.out.println(libro.getTitolo() + " - Copie disponibili: " + libro.getCopieDisponibili());
         }
     }
