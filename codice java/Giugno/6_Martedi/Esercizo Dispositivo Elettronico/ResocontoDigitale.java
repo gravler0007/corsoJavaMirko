@@ -4,6 +4,12 @@ public class ResocontoDigitale {
     private Double punti;
     private Integer id;
 
+
+    public ResocontoDigitale(String nome, String password) {
+        this.nome = nome;
+        this.password = password;
+    }
+
     public ResocontoDigitale(String nome, String password, Double punti, Integer id) {
         this.nome = nome;
         this.password = password;
