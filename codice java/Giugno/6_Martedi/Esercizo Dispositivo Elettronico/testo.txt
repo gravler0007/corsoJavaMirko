@@ -1,0 +1,25 @@
+Descrizione dell'esercizio
+
+1) Classe base DispositivoElettronico: Questa classe contiene il metodo avviaApplicazione(String nomeApp) 
+che stampa un messaggio generico riguardante l'avvio dell'applicazione, 
+ogni singola classe deve avere questo metodo per stampare cosa fa.
+
+2) Classe Smartphone: Fa l'override del metodo avviaApplicazione per includere un comportamento specifico, 
+ovvero il metodo logging con nome e password dell'accesso 
+
+3) Classe Tablet: Anch'essa fa l'override di avviaApplicazione ma con differenti specificità,  
+qui si va a specializzare le funzioni di creazione valori del utente Punti (randomico) , Id (a salire pe utente partendo da 1)
+
+4) Classe ResocontoDigitale. Deve stampare tutte le componenti dell’utente
+
+
+ResocontoDigitale ( Nome, Password, Punti, Id )  String, String, Float, Int
+
+
+
+Obiettivo
+
+Questo esercizio dimostra come differenti tipi di dispositivi possano implementare il metodo 
+avviaApplicazione in maniera specifica, pur condividendo la stessa classe di base. 
+stampare tutti i dati tramite l’oggetto ResocontoDigitale
+
