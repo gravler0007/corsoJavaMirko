@@ -18,13 +18,13 @@ public class ResocontoDigitale {
     }
 
     public void stampaResoconto() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Password: " + password);
-        if (punti != null) {
-            System.out.println("Punti: " + punti);
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Password: " + this.password);
+        if (this.punti != null) {
+            System.out.println("Punti: " + this.punti);
         }
-        if (id != null) {
-            System.out.println("Id: " + id);
+        if (this.id != null) {
+            System.out.println("Id: " + this.id);
         }
     }
 }
