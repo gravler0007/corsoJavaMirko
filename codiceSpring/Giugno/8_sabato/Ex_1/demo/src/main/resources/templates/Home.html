@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>Django merda</h1>
     <div>
-        <table style="border: 1px solid green;" >
+        <table>
             <tr>
+                <th>ID</th>
                 <th>Nome  </th>
                 <th>  ingredienti  </th>
                 <th>  procedimento</th>              
             </tr>
 
             <tr th:each="ricetta : ${ricetteList}">
+                <td th:text="${ricetta.id}"></td>
                 <td th:text="${ricetta.nome}"></td>
                 <td th:text="${ricetta.ingredienti}"></td>
                 <td th:text="${ricetta.procedimento}"></td>
             </tr>
         </table>
-        <a href="/aggiungi">django</a>
+        <a href="/aggiungi">aggiungi</a>
+        <a href="/elimina">elimina</a>
     </div>
 </body>
 </html>
