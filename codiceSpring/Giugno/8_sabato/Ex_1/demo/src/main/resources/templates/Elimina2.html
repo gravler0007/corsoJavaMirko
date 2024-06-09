@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elimina</title>
+    <link rel="stylesheet" href="/css/style2.css">
+</head>
+
+<body>
+    <h1>Elimina Ricetta alternativa 2</h1>
+    <form id="deleteForm">
+        <label for="id">ID Ricetta:</label>
+        <input type="number" id="id" name="id" required>
+        <button type="button" onclick="eliminaRicetta()">Elimina</button>
+    </form>
+
+    <script>
+        function eliminaRicetta() {
+            var id = document.getElementById("id").value;
+            alert("tutto bene");
+            fetch(`/elimina2/${id}`, {
+                method: 'DELETE'
+            })
+                .then(response => {
+                    if (response.status === 204) {
+                        alert('Ricetta eliminata con successo');
+                        window.location.href = '/';
+                    } else if (response.status === 404) {
+                        alert('Ricetta non trovata');
+                    } else {
+                        throw new Error('Errore durante l\'eliminazione della ricetta');
+                    }
+                })
+                .catch(error => {
+                    console.error('Si è verificato un errore:', error);
+                });
+        }
+    </script>
+</body>
+
+</html>
