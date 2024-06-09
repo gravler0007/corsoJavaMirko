@@ -78,6 +78,27 @@ public class RicettaController {
             return ResponseEntity.notFound().build(); // 404 Not Found
         }
     }
+
+    // Questo metodo gestisce la richiesta GET per mostrare un form che permette di trovare una ricetta by id
+    @GetMapping("/trovaById")
+    public String mostraFormTrovaRicette() {
+        return "MostraRicetta";
+    }
+
+    @PostMapping("/trovaById")
+    public String trovaRicettaById(@RequestParam Long id, Model model) {
+        Optional<Ricetta> ricettaOptional = ricettaService.findById(id);
+        if (ricettaOptional.isPresent()) {
+            Ricetta ricetta = ricettaOptional.get();
+            model.addAttribute("ricetta", ricetta);
+            return "MostraRicetta"; // Ritorna la vista (file html) per mostrare la ricetta
+        } else {
+            // Se non viene trovata una ricetta con l'ID specificato, restituisci una vista
+            // di errore
+            model.addAttribute("errore", "Ricetta non trovata per l'ID specificato");
+            return "Errore"; // Ritorna la vista per mostrare l'errore
+        }
+    }
     
 
     // @Autowired
