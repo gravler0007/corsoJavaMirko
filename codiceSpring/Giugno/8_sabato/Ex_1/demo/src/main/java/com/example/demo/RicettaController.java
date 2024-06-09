@@ -23,47 +23,52 @@ public class RicettaController {
     @Autowired
     private RicettaService ricettaService;
 
+    // Questo metodo gestisce la richiesta GET per ottenere tutte le ricette
     @GetMapping 
     public String getAllFrutti(Model model) {
         model.addAttribute("ricetteList", ricettaService.findAll());
         return "Home";
     }
 
+    // Questo metodo gestisce la richiesta GET per mostrare il form di aggiunta delle ricette
     @GetMapping("/aggiungi")
     public String mostraFormAggiungiRicette(Ricetta ricetta) {
     return "Aggiungi";
     }
 
-
+    // Questo metodo gestisce la richiesta POST per salvare una nuova ricetta
     @PostMapping("/aggiungi")
     public String salvaRicetta(Ricetta ricetta) {
         ricettaService.save(ricetta);
         return "redirect:/";
     }
 
+    // Questo metodo gestisce la richiesta GET per mostrare il form di eliminazione delle ricette
     @GetMapping("/elimina")
     public String mostraFormEliminaRicette() {
         return "Elimina";
     }
 
+    // Questo metodo gestisce la richiesta POST per eliminare una ricetta
     @PostMapping("/elimina")
     public String eliminaRicetta(@RequestParam Long id) {
         ricettaService.deleteById(id);
         return "redirect:/";
     }
 
-    @GetMapping("/elimina2")
+    // Questo metodo gestisce la richiesta GET per mostrare un secondo form di eliminazione delle ricette
+    @GetMapping("/eliminaByFetch")
     public String mostraFormEliminaRicette2() {
-        return "Elimina2";
+        return "EliminaByFetch";
     }
 
 
-    // Con questa configurazione, quando un utente invia una richiesta DELETE a
-    // /ricette/{id}, il controller Spring chiamerà il metodo
-    // eliminaRicettaByApiFetch e
-    // passerà l'ID della ricetta da eliminare. Il servizio RicettaService quindi
-    // eliminerà la ricetta corrispondente dal database.
-    @DeleteMapping("/elimina2/{id}")
+    // Questo metodo gestisce la richiesta DELETE per eliminare una ricetta tramite API Fetch
+
+    // Con questa configurazione, quando un utente invia una richiesta DELETE a /ricette/{id}, il controller Spring 
+    // chiamerà il metodo eliminaRicettaByApiFetch e passerà l'ID della ricetta da eliminare. 
+    // Il servizio RicettaService quindi eliminerà la ricetta corrispondente dal database.
+    @DeleteMapping("/eliminaByFetch/{id}")
     public ResponseEntity<Void> eliminaRicettaByApiFetch(@PathVariable Long id) {
         Optional<Ricetta> ricetta = ricettaService.findById(id);// @PathVariable è un'annotazione in Spring MVC che viene utilizzata per mappare parte dell'URL di una richiesta HTTP a un parametro di un metodo di gestione della richiesta.
         if (ricetta.isPresent()) {

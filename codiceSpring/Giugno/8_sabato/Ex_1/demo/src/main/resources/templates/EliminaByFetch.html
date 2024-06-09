@@ -19,8 +19,7 @@
     <script>
         function eliminaRicetta() {
             var id = document.getElementById("id").value;
-            alert("tutto bene");
-            fetch(`/elimina2/${id}`, {
+            fetch(`/eliminaByFetch/${id}`, {
                 method: 'DELETE'
             })
                 .then(response => {
