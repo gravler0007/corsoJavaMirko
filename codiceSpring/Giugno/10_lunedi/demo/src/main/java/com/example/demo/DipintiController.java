@@ -1,7 +1,6 @@
 package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,15 +25,19 @@ public class DipintiController {
     @GetMapping("/visualizza")
     public String viewDipinti(Model model) {
         model.addAttribute("dipinti", dipintoService.getAllPaintings());
-        return "dipinti";
+        return "VisualizzaDipinti";
+    }
+
+    @GetMapping("/aggiungi")
+    public String viewAddDipinti(Model model) {
+        return "AggiungiDipinti";
     }
 
     @PostMapping("/aggiungi")
-    public ResponseEntity<Dipinto> addPainting(@RequestBody Dipinto dipinto) {
-        Dipinto newDipinto = dipintoService.addPainting(dipinto);
-        // Invia l'evento SSE (non so bene cosa faccia)
-        dipintoService.sendSseUpdate();
-        return ResponseEntity.status(HttpStatus.OK).body(newDipinto);
+    public String addPainting(@ModelAttribute Dipinto dipinto, Model model) {
+        dipintoService.addPainting(dipinto); // Aggiungi il dipinto al servizio
+        model.addAttribute("dipinti", dipintoService.getAllPaintings()); // Aggiorna la lista dei dipinti nel modello
+        return "redirect:/api/dipinti/visualizza"; // Reindirizza alla pagina di visualizzazione dei dipinti
     }
 
     @GetMapping("/cerca")
