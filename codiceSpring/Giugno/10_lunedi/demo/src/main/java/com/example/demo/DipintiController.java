@@ -1,12 +1,15 @@
 package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/api/dipinti")
 public class DipintiController {
 
@@ -27,8 +30,11 @@ public class DipintiController {
     }
 
     @PostMapping("/aggiungi")
-    public Dipinto addPainting(@RequestBody Dipinto dipinto) {
-        return dipintoService.addPainting(dipinto);
+    public ResponseEntity<Dipinto> addPainting(@RequestBody Dipinto dipinto) {
+        Dipinto newDipinto = dipintoService.addPainting(dipinto);
+        // Invia l'evento SSE (non so bene cosa faccia)
+        dipintoService.sendSseUpdate();
+        return ResponseEntity.status(HttpStatus.OK).body(newDipinto);
     }
 
     @GetMapping("/cerca")

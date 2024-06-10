@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <h1>Catalogo di Dipinti</h1>
@@ -21,5 +22,18 @@
             <td th:text="${dipinto.anno}"></td>
         </tr>
     </table>
+    
+    <script>
+        //Con questa implementazione, quando viene aggiunto un nuovo dipinto, 
+        //il backend invierà un evento SSE a tutti i client connessi, e il frontend aggiornerà la pagina automaticamente 
+        //ricaricandola. Assicurati di includere il codice JavaScript nel tuo file HTML per sottoscriverti agli eventi SSE.
+        const eventSource = new EventSource("/api/sse/subscribe");
+
+        eventSource.addEventListener("message", function (event) {
+            // Ricarica la pagina quando ricevi un aggiornamento
+            location.reload();
+        })
+    </script>
+
 </body>
 </html>
