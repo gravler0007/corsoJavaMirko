@@ -33,13 +33,19 @@ public class DipintiController {
         return "AggiungiDipinti";
     }
 
+    // @PostMapping("/aggiungi")
+    // public String addPainting(@ModelAttribute Dipinto dipinto, Model model) {
+    //     dipintoService.addPainting(dipinto); // Aggiungi il dipinto al servizio
+    //     model.addAttribute("dipinti", dipintoService.getAllPaintings()); // Aggiorna la lista dei dipinti nel modello
+    //     return "redirect:/api/dipinti/visualizza"; // Reindirizza alla pagina di visualizzazione dei dipinti
+    // }
+
     @PostMapping("/aggiungi")
-    public String addPainting(@ModelAttribute Dipinto dipinto, Model model) {
-        dipintoService.addPainting(dipinto); // Aggiungi il dipinto al servizio
-        model.addAttribute("dipinti", dipintoService.getAllPaintings()); // Aggiorna la lista dei dipinti nel modello
+    public String addPainting(Dipinto dipinto) {
+        dipintoService.save(dipinto);
         return "redirect:/api/dipinti/visualizza"; // Reindirizza alla pagina di visualizzazione dei dipinti
     }
-
+    
     @GetMapping("/cerca")
     public ResponseEntity<List<Dipinto>> searchPaintingsByAuthorAndYear(
             @RequestParam(required = false) String autore,

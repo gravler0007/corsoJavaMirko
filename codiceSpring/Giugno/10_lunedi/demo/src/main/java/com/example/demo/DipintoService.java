@@ -39,22 +39,8 @@ public class DipintoService {
         }
     }
 
-    //non so cosa faccia, ma per ora testiamo
-    public void sendSseUpdate() {
-        for (SseEmitter emitter : new ArrayList<>(emitters)) {
-            try {
-                emitter.send("update");
-            } catch (IOException e) {
-                emitters.remove(emitter);
-            }
-        }
+    public Dipinto save(Dipinto dipinto) {
+        return dipintoRepository.save(dipinto);
     }
 
-    public SseEmitter subscribeToUpdates() {
-        SseEmitter emitter = new SseEmitter();
-        emitters.add(emitter);
-        emitter.onCompletion(() -> emitters.remove(emitter));
-        emitter.onError((ex) -> emitters.remove(emitter));
-        return emitter;
-    }
 }
