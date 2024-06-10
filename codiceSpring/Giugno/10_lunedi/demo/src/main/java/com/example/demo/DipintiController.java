@@ -38,9 +38,10 @@ public class DipintiController {
     }
 
     @GetMapping("/cerca")
-    public List<Dipinto> searchPaintingsByAuthorAndYear(
+    public ResponseEntity<List<Dipinto>> searchPaintingsByAuthorAndYear(
             @RequestParam(required = false) String autore,
             @RequestParam(required = false) Integer anno) {
-        return dipintoService.searchPaintingsByAuthorAndYear(autore, anno);
+        List<Dipinto> dipinti = dipintoService.searchPaintingsByAuthorAndYear(autore, anno);
+        return ResponseEntity.ok(dipinti);
     }
 }
