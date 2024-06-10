@@ -85,6 +85,7 @@ public class RicettaController {
         return "MostraRicetta";
     }
 
+    // Gestisce la richiesta POST per trovare e mostrare una ricetta specifica per ID
     @PostMapping("/trovaById")
     public String trovaRicettaById(@RequestParam Long id, Model model) {
         Optional<Ricetta> ricettaOptional = ricettaService.findById(id);

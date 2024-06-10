@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Catalogo di Dipinti</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Titolo</th>
+            <th>Autore</th>
+            <th>Anno</th>
+        </tr>
+        <tr th:each="dipinto : ${dipinti}">
+            <td th:text="${dipinto.id}"></td>
+            <td th:text="${dipinto.title}"></td>
+            <td th:text="${dipinto.author}"></td>
+            <td th:text="${dipinto.year}"></td>
+        </tr>
+    </table>
+</body>
+</html>

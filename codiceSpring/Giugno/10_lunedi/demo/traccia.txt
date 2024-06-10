@@ -1,0 +1,24 @@
+Configura l'Ambiente di Sviluppo:
+    Usa Spring Initializr (start.spring.io) per un nuovo progetto Spring Boot. 
+    Seleziona le dipendenze per Spring Web e Spring Data JPA.
+
+Crea le Classi del Dominio:
+    Crea una classe Entity. La classe dovrebbe avere tre campi: id, title, author, e year.
+    Aggiungi le annotazioni @Id e @GeneratedValue al campo id.
+    Aggiungi il campo year per rappresentare l'anno di creazione del quadro.
+
+Crea un Repository:
+    Definisci un'interfaccia PaintingRepository che estenda JpaRepository. 
+    Sviluppa il Controller REST:
+    Usa il @RestController.
+
+Definisci i metodi per gestire le richieste GET per recuperare i quadri e POST per aggiungere nuovi quadri al catalogo.
+    Aggiungi un metodo GET per cercare quadri per autore e anno.
+    
+    Testa l'Applicazione:
+    Esegui l'applicazione e usa un tool come Postman o cURL per testare le funzionalità REST dell'applicazione.
+    Stampa almeno 3 quadri
+
+
+EXTRA:
+Aggiungi una view per vissualizare il totale quadri e una per aggiungere o rimuovere il in singolo quadro.
