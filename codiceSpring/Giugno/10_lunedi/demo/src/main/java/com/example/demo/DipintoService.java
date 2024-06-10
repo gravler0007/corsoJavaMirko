@@ -2,17 +2,11 @@ package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class DipintoService {
-
-    //emitter per aggiornare la pagina (non so bene cosa faccia)
-    private final List<SseEmitter> emitters = new ArrayList<>();
 
     @Autowired
     private DipintoRepository dipintoRepository;
