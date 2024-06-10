@@ -38,7 +38,7 @@ public class Dipinto {
         return anno;
     }
 
-    public void setAnno(int year) {
-        this.anno = year;
+    public void setAnno(int anno) {
+        this.anno = anno;
     }
 }
