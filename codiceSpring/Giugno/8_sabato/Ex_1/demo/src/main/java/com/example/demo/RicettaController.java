@@ -32,8 +32,8 @@ public class RicettaController {
 
     // Questo metodo gestisce la richiesta GET per mostrare il form di aggiunta delle ricette
     @GetMapping("/aggiungi")
-    public String mostraFormAggiungiRicette(Ricetta ricetta) {
-    return "Aggiungi";
+        public String mostraFormAggiungiRicette(Ricetta ricetta) {
+        return "Aggiungi";
     }
 
     // Questo metodo gestisce la richiesta POST per salvare una nuova ricetta
